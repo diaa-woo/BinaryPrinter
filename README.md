@@ -56,16 +56,15 @@ void allDown() {
 main() -> while 전 USER CODE
 
 ```C
-uint32_t i, j, status;
+uint32_t i, status;
 ```
 
 while문
 
 ```C
 for(i = 0; i<=255; i++) {
-    j = i;
     for(status = 0; status < 8; status++) {
-        if((j >> status) % 2 != 0) {
+        if((i >> status) % 2 != 0) {
             HAL_GPIO_WritePin(led[status].port, led[status].pin, SET);
         }
     }
